@@ -1,0 +1,269 @@
+<template>
+  <section>
+    <div v-if="isMetric" @click="toggleMetricImperial('imperial')">
+      <div class="switch">Switch To Imperial</div>
+    </div>
+    <div v-if="isImperial" @click="toggleMetricImperial('metric')">
+      <div class="switch">Switch To Mtric</div>
+    </div>
+    <h1>{{answer}} answer</h1>
+
+    <div v-show="isImperial">
+      <h3>Imperial</h3>
+
+      <label>Weight in pounds</label>
+      <input type="number" v-model="weightPounds" />
+      <div v-if="kiloGrams">{{ numberInPounds }} lbs is {{ kiloGrams }} kG</div>
+
+      <label>Height in Feet</label>
+      <input type="number" v-model="heightInFeet" />
+      <label>Heigh in Inches</label>
+      <input type="number" v-model="heightInInches" />
+      <!-- <div
+        v-if="feet && inches"
+      >{{ feet }} ft {{ inches }} inches is {{ heightMeters / 100 }} meters.</div>-->
+      <label>How old are you</label>
+      <input type="number" v-model="ageInYears" />
+      {{ age }}
+      <h1>female</h1>
+    </div>
+    <div v-show="isMetric">
+      <h3>Metric</h3>
+      <label>Weight</label>
+      <input type="number" v-model="weightKg" />
+      {{weightKgs}}
+      <br />
+      <label>Height in meters</label>
+      <input type="number" v-model="heightInMetres" />
+      {{heightMeters}}
+      <br />
+      <label>How old are you</label>
+      <input type="number" v-model="ageInYears" />
+      {{ age }}
+    </div>
+
+    <label for="sex">Male</label>
+    <input
+      type="radio"
+      name="sex"
+      value="male"
+      :checked="sex === 'male'"
+      @change="handleSex('male')"
+    />
+    <br />
+    <label for="sex">Female</label>
+    <input
+      type="radio"
+      name="sex"
+      value="female"
+      :checked="sex === 'female'"
+      @change="handleSex('female')"
+    />
+
+    <label for="activity">Sedentary{{activity}}</label>
+    <input
+      type="radio"
+      name="activity"
+      value="1.2"
+      :checked="activity === 1.2"
+      @change="handleActivity(1.2)"
+    />
+
+    <br />
+    <label for="activity">light-activity</label>
+    <input
+      type="radio"
+      name="activity"
+      value="1.375"
+      :checked="activity === 1.375"
+      @change="handleActivity(1.375)"
+    />
+
+    <br />
+    <label for="activity">Moderately Active</label>
+    <input
+      type="radio"
+      name="activity"
+      value="1.55"
+      :checked="activity === 1.55"
+      @change="handleActivity(1.55)"
+    />
+
+    <br />
+    <label for="activity">Very Active</label>
+    <input
+      type="radio"
+      name="activity"
+      value="1.725"
+      :checked="activity === 1.725"
+      @change="handleActivity(1.725)"
+    />
+
+    <br />
+    <label for="activity">Extra Active</label>
+    <input
+      type="radio"
+      name="activity"
+      value="1.9"
+      :checked="activity === 1.9"
+      @change="handleActivity(1.9)"
+    />
+  </section>
+</template>
+
+<script>
+/* eslint-disable */
+import { mapGetters, mapActions, mapState } from "vuex";
+import $tore from "../../store/index.js";
+
+export default {
+  data() {
+    return {
+      name: "Convert to metric"
+    };
+  },
+
+  computed: {
+    answer: {
+      get: function() {},
+      set: function() {}
+    },
+
+    imperial: {
+      get: function() {},
+      set: function() {}
+    },
+    metric: {
+      get: function() {},
+      set: function() {}
+    },
+
+    activity: {
+      get: function() {},
+      set: function() {}
+    },
+
+    sex: {
+      get: function() {},
+      set: function() {}
+    },
+
+    weightPounds: {
+      get: function() {
+        return $tore.state.numberInPounds;
+      },
+      set: function(val) {
+        setTimeout(() => {
+          $tore.dispatch("handleConvertWeightToMetric", val);
+        }, 1000);
+      }
+    },
+    heightInFeet: {
+      get: function() {
+        return $tore.state.feet;
+      },
+      set: function(val) {
+        setTimeout(() => {
+          $tore.dispatch("handleConvertFeetToMetric", val);
+        }, 1000);
+      }
+    },
+    heightInInches: {
+      get: function() {
+        return $tore.state.inches;
+      },
+      set: function(val) {
+        setTimeout(() => {
+          $tore.dispatch("handleConvertInchesToMetric", val);
+        }, 1000);
+      }
+    },
+    weightKg: {
+      get: function() {
+        return $tore.state.weightKgs;
+      },
+      set: function(val) {
+        console.log("GGGGG", val);
+        setTimeout(() => {
+          $tore.dispatch("handleWeightKg", val);
+        }, 1000);
+      }
+    },
+    heightInMetres: {
+      get: function() {
+        return $tore.state.metres;
+      },
+      set: function(val) {
+        setTimeout(() => {
+          $tore.dispatch("handleHeightInMetres", val);
+        }, 1000);
+      }
+    },
+    ageInYears: {
+      get: function() {
+        return $tore.state.age;
+      },
+      set: function(val) {
+        setTimeout(() => {
+          $tore.dispatch("handleAge", val);
+        }, 1000);
+      }
+    },
+
+    ...mapState({
+      answer: null,
+      isImperial: true,
+      isMetric: null,
+      numberInPounds: null,
+      kiloGrams: null,
+      numberInFeet: null,
+      numberInInches: null,
+      heightMeters: null,
+      feet: null,
+      inches: null,
+      heightMetersFoo: null,
+      heightMetersBoo: null,
+      age: null,
+      BMR: null,
+      sedentary: null,
+      sex: null,
+      metres: null,
+      weightKgs: null
+    }),
+    ...mapGetters({
+      answer: "answer",
+      isImperial: "isImperial",
+      isMetric: "isMetric",
+      numberInPounds: "numberInPounds",
+      kiloGrams: "kiloGrams",
+      numberInFeet: "numberInFeet",
+      numberInInches: "numberInInches",
+      heightMeters: "heightMeters",
+      feet: "feet",
+      inches: "inches",
+      age: "age",
+      BMR: "BMR",
+      activity: "activity",
+      sex: "sex",
+      metres: "metres",
+      weightKgs: "weightKgs"
+    })
+  },
+
+  methods: {
+    ...mapActions([
+      "handleSex",
+      "toggleMetricImperial",
+      "handleConvertWeightToMetric",
+      "handleConvertFeetToMetric",
+      "handleConvertInchesToMetric",
+      "handleAge",
+      "handleActivity",
+      "handleHeightInMetres",
+      "handleWeightKg"
+    ])
+  }
+};
+</script>
+
+<style scoped src="./ConvertToMetric.css"></style>

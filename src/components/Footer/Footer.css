@@ -1,0 +1,8 @@
+footer {
+  border: green 2px solid;
+}
+.bottomWrapper {
+  font-size: 0.6em;
+  display: flex;
+  justify-content: space-between;
+}

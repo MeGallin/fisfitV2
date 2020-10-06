@@ -1,0 +1,39 @@
+section {
+  background: yellow;
+}
+.formInputWrapper {
+  background-color: yellow;
+  padding: 1em;
+}
+.formInputWrapper {
+  background-color: yellow;
+  padding: 1em;
+}
+.contactFormWrapper input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: none;
+  border-radius: 1px;
+  border: blue 1px solid;
+}
+
+.contactFormWrapper input[type='email'] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: none;
+  border-radius: 1px;
+  border: blue 1px solid;
+}
+.contactFormWrapper textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 1px;
+  border: 0;
+  box-shadow: none;
+  height: 150px;
+  border: blue 1px solid;
+}
