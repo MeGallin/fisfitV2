@@ -6,7 +6,9 @@
     <div v-if="isImperial" @click="toggleMetricImperial('metric')">
       <div class="switch">Switch To Mtric</div>
     </div>
-    <h1>{{answer}} answer</h1>
+
+    
+    
 
     <div v-show="isImperial">
       <h3>Imperial</h3>
@@ -27,6 +29,8 @@
       {{ age }}
       <h1>female</h1>
     </div>
+
+    <!-- Metric code -->
     <div v-show="isMetric">
       <h3>Metric</h3>
       <label>Weight</label>
@@ -108,6 +112,11 @@
       :checked="activity === 1.9"
       @change="handleActivity(1.9)"
     />
+    <br>
+    <div v-if="metricAnswer > 0">
+      for a {{sex}} weighing {{weightKgs}} and {{heightMeters}} cm tall your BTM is
+      <h1>{{metricAnswer}}</h1>
+    </div>
   </section>
 </template>
 
@@ -117,6 +126,7 @@ import { mapGetters, mapActions, mapState } from "vuex";
 import $tore from "../../store/index.js";
 
 export default {
+  
   data() {
     return {
       name: "Convert to metric"
@@ -124,6 +134,10 @@ export default {
   },
 
   computed: {
+    metricAnswer: {
+      get: function() {},
+      set: function() {}
+    },
     answer: {
       get: function() {},
       set: function() {}
@@ -179,11 +193,13 @@ export default {
       }
     },
     weightKg: {
+     
       get: function() {
+         
         return $tore.state.weightKgs;
       },
       set: function(val) {
-        console.log("GGGGG", val);
+        console.log($tore);
         setTimeout(() => {
           $tore.dispatch("handleWeightKg", val);
         }, 1000);
@@ -211,6 +227,7 @@ export default {
     },
 
     ...mapState({
+      metricAnswer: null,
       answer: null,
       isImperial: true,
       isMetric: null,
@@ -231,6 +248,7 @@ export default {
       weightKgs: null
     }),
     ...mapGetters({
+      metricAnswer:"metricAnswer",
       answer: "answer",
       isImperial: "isImperial",
       isMetric: "isMetric",
