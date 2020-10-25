@@ -1,7 +1,7 @@
 const state = {
   answer: null,
-  isImperial: true,
-  isMetric: false,
+  isImperial: false,
+  isMetric: true,
   BMR: null,
   sex: null,
   age: null,

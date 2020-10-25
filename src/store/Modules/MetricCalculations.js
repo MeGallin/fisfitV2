@@ -4,6 +4,7 @@ const state = {
   heightMeters: null,
   metres: null,
   weightKgs: null,
+  sexMetric: null,
 };
 const getters = {
   metricAnswer: (state) => state.metricAnswer,
@@ -11,6 +12,7 @@ const getters = {
   heightMeters: (state) => state.heightMeters,
   metres: (state) => state.metres,
   weightKgs: (state) => state.weightKgs,
+  sexMetric: (state) => state.sexMetric,
 };
 
 //NB Vuex Crash course youtube 21 minutes
@@ -24,21 +26,21 @@ const actions = {
     commit('handleWeightKg', val);
   },
 
+  handleAge({ commit }, age) {
+    if (age !== undefined) {
+      state.age = age;
+    }
+    commit('handleAge', age);
+  },
+
   handleSex({ commit }, val) {
+    state.sexMetric = val;
     state.sex = val;
     if (state.sex === 'male') {
-      const stepOne = 13.7 * state.weightKgs;
-      const stepTwo = 5 * state.heightMeters;
-      const stepThree = 4.7 * state.age;
-      state.metricAnswer =
-        (66 + stepOne + stepTwo - stepThree) * state.activity;
+      return state.metricAnswer;
     }
     if (state.sex === 'female') {
-      const stepOne = 9.6 * state.weightKgs;
-      const stepTwo = 1.8 * (state.heightMeters / 100);
-      const stepThree = 4.7 * state.age;
-      state.metricAnswer =
-        (955 + stepOne + stepTwo - stepThree) * state.activity;
+      return state.metricAnswer;
     }
     commit('handleSex', val);
   },
@@ -48,15 +50,23 @@ const actions = {
       const stepOne = 13.7 * state.weightKgs;
       const stepTwo = 5 * state.heightMeters;
       const stepThree = 4.7 * state.age;
-      state.metricAnswer =
-        (66 + stepOne + stepTwo - stepThree) * state.activity;
+      state.metricAnswer = (
+        (66 + stepOne + stepTwo - stepThree) *
+        state.activity
+      ).toFixed(2);
+      console.log('MALE STEP 1', stepOne);
+      console.log('MALE STEP 2', stepTwo);
+      console.log('MALE STEP 3', stepThree);
+      console.log('MALE metric answer', state.metricAnswer);
     }
     if (state.sex === 'female') {
       const stepOne = 9.6 * state.weightKgs;
       const stepTwo = 1.8 * (state.heightMeters / 100);
       const stepThree = 4.7 * state.age;
-      state.metricAnswer =
-        (955 + stepOne + stepTwo - stepThree) * state.activity;
+      state.metricAnswer = (
+        (955 + stepOne + stepTwo - stepThree) *
+        state.activity
+      ).toFixed(2);
     }
     commit('handleActivity', val);
   },
@@ -68,6 +78,10 @@ const mutations = {
   },
   handleWeightKg: function(state) {
     return state.weightKgs;
+  },
+
+  handleAge: function(state) {
+    return state.age;
   },
 
   handleSex: function(state) {

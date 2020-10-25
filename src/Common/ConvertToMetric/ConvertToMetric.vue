@@ -1,11 +1,17 @@
 <template>
   <section>
-    <div v-if="isMetric" @click="toggleMetricImperial('imperial')">
-      <div class="switch">Switch To Imperial</div>
-    </div>
-    <div v-if="isImperial" @click="toggleMetricImperial('metric')">
-      <div class="switch">Switch To Mtric</div>
-    </div>
+    <button v-if="isMetric" 
+    @click="toggleMetricImperial('imperial')"
+     :disabled ="weightKgs > 0"
+    >
+      Switch To Imperial
+    </button>
+    <button v-if="isImperial" 
+    @click="toggleMetricImperial('metric')"
+     :disabled ="weightInPounds > 0"
+    >
+      Switch To Metric
+    </button>
 
     
     
@@ -115,11 +121,11 @@
       @change="handleActivity(1.9)"
     />
     <br>
-    <div v-if="metricAnswer > 0">
-      for a {{sex}}  weighing {{weightKgs}} and {{heightMeters}} cm tall your BTM is
+    <div v-if="isMetric && metricAnswer !== null">
+      for a {{sexImperial}}  weighing {{weightKgs}} and {{heightMeters}} cm tall your BTM is
       <h1>{{metricAnswer}}</h1>
     </div>
-    <div v-if="imperialAnswer > 0">
+    <div v-if="isImperial && imperialAnswer !== null">
       for a {{sexImperial}}  weighing {{weightInPounds}}lb and {{feet}} ft {{inches}} inches  tall your BTM is
       <h1>{{imperialAnswer}}</h1>
        
@@ -212,8 +218,7 @@ export default {
       get: function() {         
         return $tore.state.weightKgs;
       },
-      set: function(val) {
-        console.log($tore);
+      set: function(val) {     
         setTimeout(() => {
           $tore.dispatch("handleWeightKg", val);
         }, 1000);
