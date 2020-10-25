@@ -15,10 +15,10 @@
 
       <label>Weight in pounds</label>
       <input type="number" v-model="weightPounds" />
-      <div v-if="kiloGrams">{{ numberInPounds }} lbs is {{ kiloGrams }} kG</div>
+      <div v-if="convertedWeightInKgs">{{ weightInPounds }} lbs is {{ convertedWeightInKgs }} kG</div>
 
       <label>Height in Feet</label>
-      <input type="number" v-model="heightInFeet" />
+      <input type="number" v-model="heightFeet" />{{convertedHeightInMeters}}
       <label>Heigh in Inches</label>
       <input type="number" v-model="heightInInches" />
       <!-- <div
@@ -27,7 +27,7 @@
       <label>How old are you</label>
       <input type="number" v-model="ageInYears" />
       {{ age }}
-      <h1>female</h1>
+      
     </div>
 
     <!-- Metric code -->
@@ -53,6 +53,7 @@
       value="male"
       :checked="sex === 'male'"
       @change="handleSex('male')"
+      :disabled ="sexImperial === 'female'"
     />
     <br />
     <label for="sex">Female</label>
@@ -62,6 +63,7 @@
       value="female"
       :checked="sex === 'female'"
       @change="handleSex('female')"
+      :disabled ="sexImperial === 'male'"
     />
 
     <label for="activity">Sedentary{{activity}}</label>
@@ -114,8 +116,13 @@
     />
     <br>
     <div v-if="metricAnswer > 0">
-      for a {{sex}} weighing {{weightKgs}} and {{heightMeters}} cm tall your BTM is
+      for a {{sex}}  weighing {{weightKgs}} and {{heightMeters}} cm tall your BTM is
       <h1>{{metricAnswer}}</h1>
+    </div>
+    <div v-if="imperialAnswer > 0">
+      for a {{sexImperial}}  weighing {{weightInPounds}}lb and {{feet}} ft {{inches}} inches  tall your BTM is
+      <h1>{{imperialAnswer}}</h1>
+       
     </div>
   </section>
 </template>
@@ -135,6 +142,10 @@ export default {
 
   computed: {
     metricAnswer: {
+      get: function() {},
+      set: function() {}
+    },
+    imperialAnswer: {
       get: function() {},
       set: function() {}
     },
@@ -162,9 +173,14 @@ export default {
       set: function() {}
     },
 
+    sexImperial: {
+      get: function() {},
+      set: function() {}
+    },
+
     weightPounds: {
       get: function() {
-        return $tore.state.numberInPounds;
+        return $tore.state.convertedWeightInMeters;
       },
       set: function(val) {
         setTimeout(() => {
@@ -172,9 +188,9 @@ export default {
         }, 1000);
       }
     },
-    heightInFeet: {
+    heightFeet: {
       get: function() {
-        return $tore.state.feet;
+        return $tore.state.convertedHeightInMeters;
       },
       set: function(val) {
         setTimeout(() => {
@@ -192,10 +208,8 @@ export default {
         }, 1000);
       }
     },
-    weightKg: {
-     
-      get: function() {
-         
+    weightKg: {     
+      get: function() {         
         return $tore.state.weightKgs;
       },
       set: function(val) {
@@ -228,12 +242,15 @@ export default {
 
     ...mapState({
       metricAnswer: null,
+      imperialAnswer: null,
       answer: null,
       isImperial: true,
       isMetric: null,
-      numberInPounds: null,
+      weightInPounds: null,
+      convertedWeightInKgs: null,
       kiloGrams: null,
-      numberInFeet: null,
+      heightInFeet: null,
+      convertedHeightInMeters:null,
       numberInInches: null,
       heightMeters: null,
       feet: null,
@@ -244,17 +261,21 @@ export default {
       BMR: null,
       sedentary: null,
       sex: null,
+      sexImperial:null,
       metres: null,
       weightKgs: null
     }),
     ...mapGetters({
       metricAnswer:"metricAnswer",
+      imperialAnswer:"imperialAnswer",
       answer: "answer",
       isImperial: "isImperial",
       isMetric: "isMetric",
-      numberInPounds: "numberInPounds",
+      weightInPounds: "weightInPounds",
+      convertedWeightInKgs: "convertedWeightInKgs",
       kiloGrams: "kiloGrams",
-      numberInFeet: "numberInFeet",
+      heightInFeet: "heightInFeet",
+      convertedHeightInMeters:"convertedHeightInMeters",
       numberInInches: "numberInInches",
       heightMeters: "heightMeters",
       feet: "feet",
@@ -263,6 +284,7 @@ export default {
       BMR: "BMR",
       activity: "activity",
       sex: "sex",
+      sexImperial: "sexImperial",
       metres: "metres",
       weightKgs: "weightKgs"
     })

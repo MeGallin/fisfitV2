@@ -1,14 +1,20 @@
 const state = {
   answer: null,
-  isImperial: null,
-  isMetric: true,
+  isImperial: true,
+  isMetric: false,
   BMR: null,
+  sex: null,
+  age: null,
+  activity: null,
 };
 const getters = {
   answer: (state) => state.answer,
   isImperial: (state) => state.isImperial,
   isMetric: (state) => state.isMetric,
   BMR: (state) => state.BMR,
+  sex: (state) => state.sex,
+  age: (state) => state.age,
+  activity: (state) => state.activity,
 };
 
 //NB Vuex Crash course youtube 21 minutes
