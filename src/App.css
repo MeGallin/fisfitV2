@@ -115,4 +115,15 @@ section {
   .form-container {
    flex-direction: column;    
   }
+  .metric-wrapper {
+    flex-direction: column;
+  }
+  .item { 
+   flex-direction: column !important;  
+  }
+  .label {
+    margin-left: 1.6em !important;
+  }
+  
+  
 }

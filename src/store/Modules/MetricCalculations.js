@@ -5,6 +5,8 @@ const state = {
   metres: null,
   weightKgs: null,
   sexMetric: null,
+  ageMetric: null,
+  activityMetric: null,
 };
 const getters = {
   metricAnswer: (state) => state.metricAnswer,
@@ -13,6 +15,8 @@ const getters = {
   metres: (state) => state.metres,
   weightKgs: (state) => state.weightKgs,
   sexMetric: (state) => state.sexMetric,
+  ageMetric: (state) => state.ageMetric,
+  activityMetric: (state) => state.activityMetric,
 };
 
 //NB Vuex Crash course youtube 21 minutes
@@ -28,6 +32,7 @@ const actions = {
 
   handleAge({ commit }, age) {
     if (age !== undefined) {
+      state.ageMetric = age;
       state.age = age;
     }
     commit('handleAge', age);
@@ -45,6 +50,7 @@ const actions = {
     commit('handleSex', val);
   },
   handleActivity({ commit }, val) {
+    state.activityMetric = val;
     state.activity = val;
     if (state.sex === 'male') {
       const stepOne = 13.7 * state.weightKgs;
@@ -54,10 +60,7 @@ const actions = {
         (66 + stepOne + stepTwo - stepThree) *
         state.activity
       ).toFixed(2);
-      console.log('MALE STEP 1', stepOne);
-      console.log('MALE STEP 2', stepTwo);
-      console.log('MALE STEP 3', stepThree);
-      console.log('MALE metric answer', state.metricAnswer);
+      console.log('MALE STEP 1', state.activity);
     }
     if (state.sex === 'female') {
       const stepOne = 9.6 * state.weightKgs;

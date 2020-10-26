@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div>
+    <div v-if="isSubmitted === false">
         <p>Feel free to calculate your BASAL METABOLIC RATE (BMR) by using the calculator below.</p>
         <p>To activate the calculator please provide your name and a valid email address.</p>
     </div>

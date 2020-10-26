@@ -35,100 +35,122 @@
     </div>
 
     <!-- Metric code -->
-    <div v-show="isMetric">
-      <h3>Metric</h3>
-      <label>Weight</label>
-      <input type="number" v-model="weightKg" />
-      {{weightKgs}}
-      <br />
-      <label>Height in meters</label>
-      <input type="number" v-model="heightInMetres" />
-      {{heightMeters}}
-      <br />
-      <label>How old are you</label>
-      <input type="number" v-model="ageInYears" />
-      {{ age }}
-    </div>
-
-    <label for="sex">Male</label>
-    <input
-      type="radio"
-      name="sex"
-      value="male"
-      :checked="sex === 'male'"
-      @change="handleSex('male')"
-      :disabled ="sexImperial === 'female'"
-    />
-    <br />
-    <label for="sex">Female</label>
-    <input
-      type="radio"
-      name="sex"
-      value="female"
-      :checked="sex === 'female'"
-      @change="handleSex('female')"
-      :disabled ="sexImperial === 'male'"
-    />
-
-    <label for="activity">Sedentary{{activity}}</label>
-    <input
-      type="radio"
-      name="activity"
-      value="1.2"
-      :checked="activity === 1.2"
-      @change="handleActivity(1.2)"
-    />
-
-    <br />
-    <label for="activity">light-activity</label>
-    <input
-      type="radio"
-      name="activity"
-      value="1.375"
-      :checked="activity === 1.375"
-      @change="handleActivity(1.375)"
-    />
-
-    <br />
-    <label for="activity">Moderately Active</label>
-    <input
-      type="radio"
-      name="activity"
-      value="1.55"
-      :checked="activity === 1.55"
-      @change="handleActivity(1.55)"
-    />
-
-    <br />
-    <label for="activity">Very Active</label>
-    <input
-      type="radio"
-      name="activity"
-      value="1.725"
-      :checked="activity === 1.725"
-      @change="handleActivity(1.725)"
-    />
-
-    <br />
-    <label for="activity">Extra Active</label>
-    <input
-      type="radio"
-      name="activity"
-      value="1.9"
-      :checked="activity === 1.9"
-      @change="handleActivity(1.9)"
-    />
-    <br>
+    
     <div v-if="isMetric && metricAnswer !== null">
-      for a {{sexImperial}}  weighing {{weightKgs}} and {{heightMeters}} cm tall your BTM is
-      <h1>{{metricAnswer}}</h1>
+      <h3>Metric</h3>
+     <p> For a <span class="answer">{{ageMetric}}</span> year old <span class="answer">{{sexImperial}}</span>  weighing <span class="answer">{{weightKgs}}</span>  kG at <span class="answer">{{heightMeters}}</span> cm tall and being 
+       <span class="answer" v-if="activityMetric === 1.2">Sedentary</span>
+       <span class="answer" v-if="activityMetric === 1.375">lightly-activity</span>
+       <span class="answer" v-if="activityMetric === 1.55">moderately active</span>
+       <span class="answer" v-if="activityMetric === 1.725">very active</span>
+       <span class="answer" v-if="activityMetric === 1.9">extra active</span>
+       your BTM is <span class="answer">{{metricAnswer}}</span>
+        </p>  
+      
     </div>
+
     <div v-if="isImperial && imperialAnswer !== null">
-      for a {{sexImperial}}  weighing {{weightInPounds}}lb and {{feet}} ft {{inches}} inches  tall your BTM is
-      <h1>{{imperialAnswer}}</h1>
-       
+      for a {{sexImperial}}  weighing {{weightInPounds}}lb and {{feet}} ft {{inches}} inches  tall your BTM is {{activity}}
+      <h1>{{imperialAnswer}}</h1>       
     </div>
-  </section>
+<div class="metric-wrapper">  
+  <div class="item">   
+    <div v-show="isMetric" class="form-style-bmr">    
+      <label>Weight (kG) <span class="confirmation"> You entered {{weightKgs}} kG.</span></label>
+      <input type="number" v-model="weightKg" />      
+      <label>Height (cm)<span class="confirmation"> You entered {{heightMeters}} cm.</span></label>
+      <input type="number" v-model="heightInMetres" />      
+      <label>Age (years)<span class="confirmation"> You entered {{ ageMetric }} years</span></label>
+      <input type="number" v-model="ageInYears" />      
+    </div>      
+  </div>
+
+  <div class="item">
+    <div>    
+      <label class="label" for="sex">      
+        <input
+         class="option-input radio"
+          type="radio"
+          name="sex"
+          value="male"
+          :checked="sex === 'male'"
+          @change="handleSex('male')"
+          :disabled ="sexImperial === 'female'"
+        />Male
+        </label>   
+    
+      <label class="label" for="sex">
+      <input
+       class="option-input radio"
+        type="radio"
+        name="sex"
+        value="female"
+        :checked="sex === 'female'"
+        @change="handleSex('female')"
+        :disabled ="sexImperial === 'male'"
+      />Female
+      </label>    
+    </div>
+   
+   <div>    
+      <label class="label" for="activity">
+      <input
+       class="option-input radio"
+        type="radio"
+        name="activity"
+        value="1.2"
+        :checked="activity === 1.2"
+        @change="handleActivity(1.2)"
+      />Sedentary
+      </label>
+
+      <label class="label" for="activity">
+      <input
+       class="option-input radio"
+        type="radio"
+        name="activity"
+        value="1.375"
+        :checked="activity === 1.375"
+        @change="handleActivity(1.375)"
+      />light-activity
+    </label>
+
+      <label class="label" for="activity">
+      <input
+       class="option-input radio"
+        type="radio"
+        name="activity"
+        value="1.55"
+        :checked="activity === 1.55"
+        @change="handleActivity(1.55)"
+      />Moderately Active
+      </label>
+
+      <label class="label" for="activity">
+      <input
+       class="option-input radio"
+        type="radio"
+        name="activity"
+        value="1.725"
+        :checked="activity === 1.725"
+        @change="handleActivity(1.725)"
+      />Very Active
+      </label>
+
+      <label class="label" for="activity">
+        <input
+         class="option-input radio"
+          type="radio"
+          name="activity"
+          value="1.9"
+          :checked="activity === 1.9"
+          @change="handleActivity(1.9)"
+        />Extra Active
+        </label>    
+   </div>         
+  </div>
+</div>    
+</section>
 </template>
 
 <script>
@@ -168,6 +190,11 @@ export default {
     },
 
     activity: {
+      get: function() {},
+      set: function() {}
+    },
+
+    activityMetric: {
       get: function() {},
       set: function() {}
     },
@@ -242,6 +269,10 @@ export default {
         }, 1000);
       }
     },
+    ageMetric: {
+       get: function() {},
+       set: function() {}
+    },
 
     ...mapState({
       metricAnswer: null,
@@ -261,7 +292,10 @@ export default {
       heightMetersFoo: null,
       heightMetersBoo: null,
       age: null,
+      ageMetric: null,
       BMR: null,
+      activity: null,
+      activityMetric: null,
       sedentary: null,
       sex: null,
       sexImperial:null,
@@ -284,8 +318,10 @@ export default {
       feet: "feet",
       inches: "inches",
       age: "age",
+      ageMetric:"ageMetric",
       BMR: "BMR",
       activity: "activity",
+      activityMetric: "activityMetric",
       sex: "sex",
       sexImperial: "sexImperial",
       metres: "metres",
