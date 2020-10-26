@@ -6,6 +6,7 @@ const state = {
   sex: null,
   age: null,
   activity: null,
+  isSubmitted: false,
 };
 const getters = {
   answer: (state) => state.answer,
@@ -15,6 +16,7 @@ const getters = {
   sex: (state) => state.sex,
   age: (state) => state.age,
   activity: (state) => state.activity,
+  isSubmitted: (state) => state.isSubmitted,
 };
 
 //NB Vuex Crash course youtube 21 minutes
@@ -30,6 +32,12 @@ const actions = {
     }
     commit('toggleMetricImperial', payload);
   },
+  handleCommit({ commit }, payload) {
+    if (payload === 'isSubmitted') {
+      state.isSubmitted = true;
+    }
+    commit('handleCommit', payload);
+  },
 };
 
 const mutations = {
@@ -40,6 +48,10 @@ const mutations = {
     if (state.isMetric === true) {
       return state.isMetric;
     }
+  },
+  handleCommit: function(state) {
+    console.log(state);
+    return state.isSubmitted;
   },
 };
 

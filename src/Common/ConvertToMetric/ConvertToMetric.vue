@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h1>BMR CALCULATOR</h1>
     <button v-if="isMetric" 
     @click="toggleMetricImperial('imperial')"
      :disabled ="weightKgs > 0"
@@ -26,10 +27,7 @@
       <label>Height in Feet</label>
       <input type="number" v-model="heightFeet" />{{convertedHeightInMeters}}
       <label>Heigh in Inches</label>
-      <input type="number" v-model="heightInInches" />
-      <!-- <div
-        v-if="feet && inches"
-      >{{ feet }} ft {{ inches }} inches is {{ heightMeters / 100 }} meters.</div>-->
+      <input type="number" v-model="heightInInches" />      
       <label>How old are you</label>
       <input type="number" v-model="ageInYears" />
       {{ age }}
