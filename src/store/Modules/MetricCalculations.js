@@ -60,7 +60,6 @@ const actions = {
         (66 + stepOne + stepTwo - stepThree) *
         state.activity
       ).toFixed(2);
-      console.log('MALE STEP 1', state.activity);
     }
     if (state.sex === 'female') {
       const stepOne = 9.6 * state.weightKgs;
