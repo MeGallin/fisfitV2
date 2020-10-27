@@ -1,18 +1,28 @@
 <template>
   <section>
     <h1>BMR CALCULATOR</h1>
+
+
     <button v-if="isMetric" 
+    class="switch-button"
+    :class="weightKgs ? 'switch-button-disabled' : ''"
     @click="toggleMetricImperial('imperial')"
      :disabled ="weightKgs > 0"
     >
       Switch To Imperial
     </button>
+
+
+
     <button v-if="isImperial" 
+    class="switch-button"
+    :class="weightInPounds ? 'switch-button-disabled' : ''"
     @click="toggleMetricImperial('metric')"
      :disabled ="weightInPounds > 0"
     >
       Switch To Metric
     </button>
+
 
 <div v-if="isMetric && metricAnswer !== null">
       <h3>Metric</h3>
@@ -92,8 +102,10 @@
       <input type="number" v-model="ageInYears" />      
     </div>      
   </div>
+<div>
 
-  <div class="item">
+
+  <div class="label-wrapper">
     <div>    
       <label class="label" for="sex">      
         <input
@@ -119,8 +131,9 @@
       />Female
       </label>    
     </div>
-   
-   <div>    
+  </div>
+
+  <div class="label-wrapper">    
       <label class="label" for="activity">
       <input
        class="option-input radio"
@@ -175,9 +188,9 @@
           @change="handleActivity(1.9)"
         />Extra Active
         </label>    
-   </div>         
+    </div>         
   </div>
-</div>    
+</div>   
 </section>
 </template>
 
