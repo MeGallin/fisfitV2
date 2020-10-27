@@ -52,22 +52,22 @@
     <div v-show="isImperial" class="item">
       <div  class="form-style-bmr">
         <label>Weight in pounds 
-          <span class="confirmation">You entered {{ weightInPounds }} </span> lb. 
+          <span v-if="weightInPounds" class="confirmation">You entered {{ weightInPounds }} </span> lb. 
         </label>
         <input type="number" v-model="weightPounds" />
 
         <label>Height in Feet 
-          <span class="confirmation">You entered {{feet}} ft.</span>
+          <span v-if="feet" class="confirmation">You entered {{feet}} ft.</span>
         </label>
         <input type="number" v-model="heightFeet" />
 
         <label>Heigh in Inches 
-          <span class="confirmation">You entered {{inches}} inches.</span>
+          <span v-if="inches" class="confirmation">You entered {{inches}} inches.</span>
         </label>
         <input type="number" v-model="heightInInches" /> 
 
         <label>How old are you 
-          <span class="confirmation">You entered {{ageMetric}} years.</span> 
+          <span v-if="ageMetric" class="confirmation">You entered {{ageMetric}} years.</span> 
         </label>
         <input type="number" v-model="ageInYears" />        
       </div>
@@ -77,17 +77,17 @@
   <div v-show="isMetric" class="item">   
     <div  class="form-style-bmr">    
       <label>Weight (kG) 
-        <span class="confirmation"> You entered {{weightKgs}} kG.</span>
+        <span v-if="weightKgs" class="confirmation"> You entered {{weightKgs}} kG.</span>
       </label>
       <input type="number" v-model="weightKg" />
 
       <label>Height (cm)
-        <span class="confirmation"> You entered {{heightMeters}} cm.</span>
+        <span v-if="heightMeters" class="confirmation"> You entered {{heightMeters}} cm.</span>
       </label>
       <input type="number" v-model="heightInMetres" />
 
       <label>Age (years)
-        <span class="confirmation"> You entered {{ ageMetric }} years</span>
+        <span v-if="ageMetric" class="confirmation"> You entered {{ ageMetric }} years</span>
       </label>
       <input type="number" v-model="ageInYears" />      
     </div>      

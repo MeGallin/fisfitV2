@@ -78,12 +78,12 @@ text-align: left;
   -o-appearance: none;
   appearance: none;
   position: relative;
-  top: 13.33333px;
+  top: 6.33333px;
   right: 0;
   bottom: 0;
   left: 0;
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
   transition: all 0.15s ease-out 0s;
   background: #cbd1d8;
   border: none;
@@ -102,14 +102,14 @@ text-align: left;
   background: #40e0d0;
 }
 .option-input:checked::before {
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width:20px;
   position: absolute;
   content: '✔';
   display: inline-block;
-  font-size: 26.66667px;
+  font-size: 13.66667px;
   text-align: center;
-  line-height: 40px;
+  line-height: 20px;
 }
 .option-input:checked::after {
   -webkit-animation: click-wave 0.65s;
