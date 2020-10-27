@@ -43,15 +43,7 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {
-    
-      "prettier/prettier": [
-        "error",
-        {
-          "trailingComma": "es5",
-          "singleQuote": true
-        }
-      ]
+    "rules": {   
     }
   },
   "browserslist": [
