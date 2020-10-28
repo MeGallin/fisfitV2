@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>{{ name }}</h1>
+    <h1 class="title">{{ name }}</h1>
     <p>My passion for health and fitness led me to as a personal trainer.</p>
     <p>
       I strongly believe in the necessity for an active lifestyle, encompassing
@@ -12,7 +12,7 @@
       knowledge, skills, support, guidance and resources to assist and inspire
       them on their journey to a healthier life.
     </p>
-    <h2>EXPERIENCE</h2>
+    <h2 class="title">EXPERIENCE</h2>
     <p>
       I have been working with clients face to face for over 4 years. In this
       time, I have put in thousands of hours each year helping people increase

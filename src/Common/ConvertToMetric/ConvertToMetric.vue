@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>BMR CALCULATOR</h1>
+    <h1 class="title">BMR CALCULATOR</h1>
 
 
     <button v-if="isMetric" 

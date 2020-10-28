@@ -36,7 +36,7 @@ dd {
   margin: 0;
 }
 * + * {
-  margin: 1em 0 0;
+  margin: 1px 0 0;
 }
 
 /* Set core body defaults */
@@ -106,7 +106,9 @@ button {
 p {
   line-height: 1.5;
   /* font-size: clamp(1.6rem, 1.25vh, 1.25rem); */
-  font-size: max(1.2rem, 1.25vw);
+  font-size: max(1.2rem, 1.125vw);
+  text-align: justify;
+  margin-bottom: 1rem;
 }
 
 section {
@@ -121,6 +123,7 @@ section {
     text-align: center;
     margin: 0 auto; 
     width: 100%;
+    padding: 1rem;
   }
   .form-container {
    flex-direction: column;    

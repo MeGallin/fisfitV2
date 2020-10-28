@@ -1,6 +1,5 @@
 <template>
-  <section>
-    <h1>{{name}}</h1>
+  <section>    
     <ContactForm />
   </section>
 </template>
