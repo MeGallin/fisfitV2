@@ -52,6 +52,7 @@ body {
 
 body {
   display: grid;
+  border: white 6px solid;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -100,6 +101,7 @@ button {
 
 /* Optimizing fonts */
 .title {
+  text-transform: uppercase;
   letter-spacing: 2px;
   font-size: clamp(1rem, 2.5vw, 2.5rem);
 }
@@ -115,6 +117,7 @@ section {
   text-align: center;
   margin: 0 auto; 
   width: 80%;
+  padding-bottom: 1em;
 }
 
 /* Media Queries */
@@ -136,6 +139,14 @@ section {
   }
   .label {
     margin-left: 2.6em !important;
+  }
+  .footerContent {
+    width: 100% !important;
+  }
+  .bottomWrapper {
+    width: 100% !important;
+    margin: 0 auto;
+      
   }
   
   

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="title">BMR CALCULATOR</h1>
+    <h1 class="title">BMR CALCULATOR <small> <span class="convertColour" v-text="isMetric ? '[metric]' : '[imperial]'"></span></small></h1>
 
 
     <button v-if="isMetric" 

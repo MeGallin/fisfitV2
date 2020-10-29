@@ -1,0 +1,14 @@
+.calCalcWrapper {
+display: flex;
+flex-direction: row;
+}
+.item {
+align-items: center;
+}
+.formWrapper {
+width: 100%;
+}
+.definition {  
+padding: 10px 20px;
+
+}

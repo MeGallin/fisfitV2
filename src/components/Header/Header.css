@@ -1,9 +1,3 @@
-:root {
-  --banner-height: 10vh;
-}
-section {
-  background: yellow;
-}
 /* logo ratio L:H 4.17 */
 header {
   width: 100%;
@@ -20,18 +14,20 @@ header {
   justify-content: space-between;
 }
 nav {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 30px;
   width: 100%;
   height: 100%;
 }
 .logo {
   /* Logo size = 816 high x 747 Wide ratio = 1.092369 */
-  height: 160px;
-  width: 146px;
+  height: 100px;
+  width: 92px;
   display: flex;
+  margin: 0.2em;
 }
 .navLinks {
-  position: sticky;
-   top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -61,23 +57,23 @@ nav {
   width: 4%;
 }
 .home {
-  background-color: yellow;
+  background-color: crimson;
 }
 .about {
   background-color: crimson;
 }
 .personalTraining {
-  background-color: blue;
+  background-color: crimson;
 }
 .onlineCoaching {
-  background-color: purple;
+  background-color: crimson;
 }
 .bannerContentContainer {
   color: white;
 }
 .bannerContentWrapper {
   color: white;
-  height: 28vh;
+  /* height: 28vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
