@@ -80,7 +80,8 @@ nav {
   align-items: center;
 }
 .bannerContentInnerWrapper {
-  display: flex;
+  display: flex;  
+  margin-bottom: 0.5em;
 }
 .bannerContentInnerWrapper button {
   border: white 1px solid;

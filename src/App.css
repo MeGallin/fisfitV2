@@ -106,10 +106,10 @@ button {
   font-size: clamp(1rem, 2.5vw, 2.5rem);
 }
 p {
-  line-height: 1.5;
+  line-height: 1.2;
   /* font-size: clamp(1.6rem, 1.25vh, 1.25rem); */
   font-size: max(1.2rem, 1.125vw);
-  text-align: justify;
+  text-align: left;
   margin-bottom: 1rem;
 }
 

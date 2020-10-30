@@ -31,8 +31,8 @@
     <span class="answer">{{sexImperial}}</span>  weighing 
     <span class="answer">{{weightKgs}}</span>  kG standing at 
     <span class="answer">{{heightMeters}}</span> cm tall and being 
-    <span class="answer" v-if="activityMetric === 1.2">Sedentary</span>
-    <span class="answer" v-if="activityMetric === 1.375">lightly-activity</span>
+    <span class="answer" v-if="activityMetric === 1.2">sedentary</span>
+    <span class="answer" v-if="activityMetric === 1.375">lightly-active</span>
     <span class="answer" v-if="activityMetric === 1.55">moderately active</span>
     <span class="answer" v-if="activityMetric === 1.725">very active</span>
     <span class="answer" v-if="activityMetric === 1.9">extra active</span> your BTM is 
@@ -48,8 +48,8 @@
       <span class="answer">{{weightInPounds}}</span> lb standing at 
       <span class="answer">{{feet}}</span> ft 
       <span class="answer">{{inches}}</span> inches  tall and being 
-      <span class="answer" v-if="activityMetric === 1.2">Sedentary</span>
-      <span class="answer" v-if="activityMetric === 1.375">lightly-activity</span>
+      <span class="answer" v-if="activityMetric === 1.2">sedentary</span>
+      <span class="answer" v-if="activityMetric === 1.375">lightly-active</span>
       <span class="answer" v-if="activityMetric === 1.55">moderately active</span>
       <span class="answer" v-if="activityMetric === 1.725">very active</span>
       <span class="answer" v-if="activityMetric === 1.9">extra active</span> your BTM is
@@ -61,25 +61,26 @@
   <div class="metric-wrapper">  
     <div v-show="isImperial" class="item">
       <div  class="form-style-bmr">
-        <label>Weight in pounds 
-          <span v-if="weightInPounds" class="confirmation">You entered {{ weightInPounds }} </span> lb. 
+        <label>Weight (lb) 
+          <span v-if="weightInPounds" class="confirmation">You entered 
+            {{ weightInPounds }} lb.</span> 
         </label>
-        <input type="number" v-model="weightPounds" />
+        <input :class="weightInPounds > 0 ? 'entered': ''"  type="number" v-model="weightPounds" :placeholder="weightInPounds" />
 
-        <label>Height in Feet 
-          <span v-if="feet" class="confirmation">You entered {{feet}} ft.</span>
+        <label>Height (ft) 
+          <span v-if="feet" class="confirmation">You entered {{feet}}'</span>
         </label>
-        <input type="number" v-model="heightFeet" />
+        <input :class="feet > 0 ? 'entered': ''" type="number" v-model="heightFeet" :placeholder="feet" />
 
-        <label>Heigh in Inches 
-          <span v-if="inches" class="confirmation">You entered {{inches}} inches.</span>
+        <label>Heigh (inches) 
+          <span v-if="inches" class="confirmation">You entered {{inches}}"</span>
         </label>
-        <input type="number" v-model="heightInInches" /> 
+        <input :class="inches > 0 ? 'entered': ''" type="number" v-model="heightInInches" :placeholder="inches" /> 
 
-        <label>How old are you 
+        <label>Age (years) 
           <span v-if="ageMetric" class="confirmation">You entered {{ageMetric}} years.</span> 
         </label>
-        <input type="number" v-model="ageInYears" />        
+        <input :class="ageMetric > 0 ? 'entered': ''" type="number" v-model="ageInYears" :placeholder="ageMetric"/>        
       </div>
     </div>
   
@@ -89,17 +90,17 @@
       <label>Weight (kG) 
         <span v-if="weightKgs" class="confirmation"> You entered {{weightKgs}} kG.</span>
       </label>
-      <input type="number" v-model="weightKg" />
+      <input :class="weightKgs > 0 ? 'entered': ''" type="number" v-model="weightKg" :placeholder="weightKgs" />
 
       <label>Height (cm)
         <span v-if="heightMeters" class="confirmation"> You entered {{heightMeters}} cm.</span>
       </label>
-      <input type="number" v-model="heightInMetres" />
+      <input :class="heightMeters > 0 ? 'entered': ''" type="number" v-model="heightInMetres" :placeholder="heightMeters" />
 
       <label>Age (years)
         <span v-if="ageMetric" class="confirmation"> You entered {{ ageMetric }} years</span>
       </label>
-      <input type="number" v-model="ageInYears" />      
+      <input :class="ageMetric > 0 ? 'entered': ''" type="number" v-model="ageInYears" :placeholder="ageMetric" />      
     </div>      
   </div>
 <div>

@@ -1,6 +1,6 @@
 <template>
   <footer class="footerImage">
-<h1 class="title">Take ownership of your health</h1>
+    <h1 class="title">Take ownership of your health</h1>
     <div class="item footerContent">
 
       <!-- <div>

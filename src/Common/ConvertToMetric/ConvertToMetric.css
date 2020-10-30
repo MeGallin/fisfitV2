@@ -25,7 +25,7 @@ align-items: center;
 .form-style-bmr input[type="number"] {	
 	background: rgba(255,255,255,.1);
   border: none;
-  border-left: 4px solid black;
+  border-left: 4px solid crimson;
 	border-radius: 4px;
 	font-size: 15px;
 	margin: 0;
@@ -40,6 +40,9 @@ align-items: center;
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 30px;
+}
+input[type="number"].entered {
+  border-left: #40e0d0 4px solid;
 }
 .item {
 border: 1px solid rgba(51,51,51,0.2);
@@ -159,9 +162,4 @@ text-align: left;
   flex-wrap: wrap;
   align-items: center;
 }
-.label-wrapper label:nth-of-type(1) {
-  margin-bottom: 0;  
-}
-.label-wrapper label {
-  margin-bottom: 1em;
-}
+

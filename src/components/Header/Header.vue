@@ -104,9 +104,9 @@
         </div>
 
         <div v-if="calorieCalculatorBannerContent" class="bannerContentWrapper">
-          <h2>THE COACH</h2>
+          <h2>THE TOOL</h2>
           <div class="spacer onlineCoaching"></div>
-          <h1>Calculate It</h1>
+          <h1>CALCULATE IT</h1>
           <h5>LOSE FAT – GET IN SHAPE – FEELING AWESOME</h5>
           <div class="bannerContentInnerWrapper">
             <router-link to="/personal-training">
