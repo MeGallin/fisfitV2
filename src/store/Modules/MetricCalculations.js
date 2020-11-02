@@ -72,6 +72,17 @@ const actions = {
     }
     commit('handleActivity', val);
   },
+  handleResetMetric({ commit }, val) {
+    state.metricAnswer = val;
+    state.weightKgs = val;
+    state.heightMeters = val;
+    state.ageImperial = val;
+    state.ageMetric = val;
+    state.sexMetric = val;
+    state.activityMetric = val;
+    state.age = val;
+    commit('handleResetMetric', val);
+  },
 };
 
 const mutations = {
@@ -91,6 +102,19 @@ const mutations = {
   },
   handleActivity: function(state) {
     return state.activity;
+  },
+  handleResetMetric: function(state) {
+    console.log(state);
+    return [
+      state.metricAnswer,
+      state.weightKgs,
+      state.heightMeters,
+      state.ageMetric,
+      state.ageImperial,
+      state.sexMetric,
+      state.activityMetric,
+      state.age,
+    ];
   },
 };
 

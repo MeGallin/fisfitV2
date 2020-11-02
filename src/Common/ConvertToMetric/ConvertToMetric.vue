@@ -43,7 +43,7 @@
 <div v-if="isImperial && imperialAnswer !== null">
       <h3>Imperial</h3>
   <p>For a 
-      <span class="answer">{{ageMetric}}</span> year old 
+      <span class="answer">{{ageImperial}}</span> year old 
       <span class="answer">{{sexImperial}}</span>  weighing 
       <span class="answer">{{weightInPounds}}</span> lb standing at 
       <span class="answer">{{feet}}</span> ft 
@@ -78,14 +78,15 @@
         <input :class="inches > 0 ? 'entered': ''" type="number" v-model="heightInInches" :placeholder="inches" /> 
 
         <label>Age (years) 
-          <span v-if="ageMetric" class="confirmation">You entered {{ageMetric}} years.</span> 
+          <span v-if="ageImperial" class="confirmation">You entered {{ageImperial}} years.</span> 
         </label>
-        <input :class="ageMetric > 0 ? 'entered': ''" type="number" v-model="ageInYears" :placeholder="ageMetric"/>        
+        <input :class="ageImperial > 0 ? 'entered': ''" type="number" v-model="ageInYears" :placeholder="ageImperial"/>        
       </div>
+      <button class="switch-button" @click="handleResetImperial(null)">RESET</button>
     </div>
   
     <!-- Metric code --> 
-  <div v-show="isMetric" class="item">   
+  <div v-show="isMetric" class="item ">   
     <div  class="form-style-bmr">    
       <label>Weight (kG) 
         <span v-if="weightKgs" class="confirmation"> You entered {{weightKgs}} kG.</span>
@@ -101,8 +102,10 @@
         <span v-if="ageMetric" class="confirmation"> You entered {{ ageMetric }} years</span>
       </label>
       <input :class="ageMetric > 0 ? 'entered': ''" type="number" v-model="ageInYears" :placeholder="ageMetric" />      
-    </div>      
+    </div> 
+    <button class="switch-button" @click="handleResetMetric(null)">RESET</button>     
   </div>
+  
 <div>
 
 
@@ -190,8 +193,10 @@
         />Extra Active
         </label>    
     </div>         
-  </div>
+  </div>  
+
 </div>   
+
 </section>
 </template>
 
@@ -315,7 +320,10 @@ export default {
        get: function() {},
        set: function() {}
     },
-
+    ageImperial: {
+       get: function() {},
+       set: function() {}
+    },
     ...mapState({
       metricAnswer: null,
       imperialAnswer: null,
@@ -335,6 +343,7 @@ export default {
       heightMetersBoo: null,
       age: null,
       ageMetric: null,
+      ageImperial: null,
       BMR: null,
       activity: null,
       activityMetric: null,
@@ -361,6 +370,7 @@ export default {
       inches: "inches",
       age: "age",
       ageMetric:"ageMetric",
+      ageImperial:"ageImperial",
       BMR: "BMR",
       activity: "activity",
       activityMetric: "activityMetric",
@@ -381,7 +391,9 @@ export default {
       "handleAge",
       "handleActivity",
       "handleHeightInMetres",
-      "handleWeightKg"
+      "handleWeightKg",
+      "handleResetMetric",
+      "handleResetImperial"
     ])
   }
 };

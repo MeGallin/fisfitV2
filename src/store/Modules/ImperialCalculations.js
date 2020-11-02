@@ -8,6 +8,7 @@ const state = {
   feet: null,
   inches: null,
   convertedInchesToMetric: null,
+  ageImperial: null,
   sexImperial: null,
 };
 const getters = {
@@ -19,6 +20,7 @@ const getters = {
   numberInInches: (state) => state.numberInInches,
   feet: (state) => state.feet,
   inches: (state) => state.inches,
+  ageImperial: (state) => state.ageImperial,
   sexImperial: (state) => state.sexImperial,
 };
 
@@ -44,6 +46,7 @@ const actions = {
   },
   handleAge({ commit }, age) {
     if (age !== undefined) {
+      state.ageImperial = age;
       state.age = age;
     }
     commit('handleAge', age);
@@ -90,6 +93,17 @@ const actions = {
     }
     commit('handleActivity', val);
   },
+  handleResetImperial({ commit }, val) {
+    state.imperialAnswer = val;
+    state.weightInPounds = val;
+    state.feet = val;
+    state.inches = val;
+    state.ageImperial = val;
+    state.sexImperial = val;
+    state.activityMetric = val;
+    state.age = val;
+    commit('handleResetImperial', val);
+  },
 };
 
 const mutations = {
@@ -108,11 +122,25 @@ const mutations = {
   handleAge: function(state) {
     return state.age;
   },
+
   handleSex: function(state) {
     return state.sex;
   },
   handleActivity: function(state) {
     return state.activity;
+  },
+  handleResetImperial: function(state) {
+    console.log(state);
+    return [
+      state.imperialAnswer,
+      state.weightInPounds,
+      state.feet,
+      state.inches,
+      state.ageImperial,
+      state.sexImperial,
+      state.activityMetric,
+      state.age,
+    ];
   },
 };
 
