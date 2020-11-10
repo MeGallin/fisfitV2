@@ -36,7 +36,7 @@
           </li>
           <li>
             <router-link to="/calorie-calculator">
-              <a @click="setOpenMediaQuery(open)">CALOREI CALCULATOR</a>
+              <a @click="setOpenMediaQuery(open)">CALORIE CALCULATOR</a>
             </router-link>
           </li>
         </ul>
@@ -46,76 +46,76 @@
         <div v-if="homeBannerContent" class="bannerContentWrapper">
           <h2>YOUR FITNESS JOURNEY</h2>
           <div class="spacer home"></div>
-          <h1>STARTS HERE</h1>
-          <h5>LOSE FAT – GET IN SHAPE – FEELING AWESOME</h5>
-          <div class="bannerContentInnerWrapper">
+          <h5>STARTS HERE</h5>
+          <h1 class="title">LOSE FAT – GET IN SHAPE – FEELING AWESOME</h1>
+          <!-- <div class="bannerContentInnerWrapper">
             <router-link to="/personal-training">
               <a @click="setOpenMediaQuery(open)">
                 <button>START HERE</button>
               </a>
             </router-link>
             <button>GET IN TOUCH</button>
-          </div>
+          </div> -->
         </div>
 
         <div v-if="aboutBannerContent" class="bannerContentWrapper">
-          <h2>IT's NOT ABOUT ME</h2>
-          <div class="spacer about"></div>
-          <h1>IT's ALL ABOUT YOU</h1>
-          <h5>LOSE FAT – GET IN SHAPE – FEELING AWESOME</h5>
-          <div class="bannerContentInnerWrapper">
+          <h2>YOUR FITNESS JOURNEY</h2>
+          <div class="spacer home"></div>
+          <h5>STARTS HERE</h5>
+          <h1 class="title">LOSE FAT – GET IN SHAPE – FEELING AWESOME</h1>
+          <!-- <div class="bannerContentInnerWrapper">
             <router-link to="/personal-training">
               <a @click="setOpenMediaQuery(open)">
                 <button>START HERE</button>
               </a>
             </router-link>
             <button>GET IN TOUCH</button>
-          </div>
+          </div> -->
         </div>
 
         <div v-if="personalTrainingBannerContent" class="bannerContentWrapper">
-          <h2>IT's PERSONAL</h2>
-          <div class="spacer personalTraining"></div>
-          <h1>START TODAY</h1>
-          <h5>LOSE FAT – GET IN SHAPE – FEELING AWESOME</h5>
-          <div class="bannerContentInnerWrapper">
+          <h2>YOUR FITNESS JOURNEY</h2>
+          <div class="spacer home"></div>
+          <h5>STARTS HERE</h5>
+          <h1 class="title">LOSE FAT – GET IN SHAPE – FEELING AWESOME</h1>
+          <!-- <div class="bannerContentInnerWrapper">
             <router-link to="/personal-training">
               <a @click="setOpenMediaQuery(open)">
                 <button>START HERE</button>
               </a>
             </router-link>
             <button>GET IN TOUCH</button>
-          </div>
+          </div> -->
         </div>
 
         <div v-if="onlineCoachingBannerContent" class="bannerContentWrapper">
-          <h2>THE COACH</h2>
-          <div class="spacer onlineCoaching"></div>
-          <h1>ALL TO YOURSELF</h1>
-          <h5>LOSE FAT – GET IN SHAPE – FEELING AWESOME</h5>
-          <div class="bannerContentInnerWrapper">
+          <h2>YOUR FITNESS JOURNEY</h2>
+          <div class="spacer home"></div>
+          <h5>STARTS HERE</h5>
+          <h1 class="title">LOSE FAT – GET IN SHAPE – FEELING AWESOME</h1>
+          <!-- <div class="bannerContentInnerWrapper">
             <router-link to="/personal-training">
               <a @click="setOpenMediaQuery(open)">
                 <button>START HERE</button>
               </a>
             </router-link>
             <button>GET IN TOUCH</button>
-          </div>
+          </div> -->
         </div>
 
         <div v-if="calorieCalculatorBannerContent" class="bannerContentWrapper">
-          <h2>THE TOOL</h2>
-          <div class="spacer onlineCoaching"></div>
-          <h1>CALCULATE IT</h1>
-          <h5>LOSE FAT – GET IN SHAPE – FEELING AWESOME</h5>
-          <div class="bannerContentInnerWrapper">
+          <h2>YOUR FITNESS JOURNEY</h2>
+          <div class="spacer home"></div>
+          <h5>STARTS HERE</h5>
+          <h1 class="title">LOSE FAT – GET IN SHAPE – FEELING AWESOME</h1>
+          <!-- <div class="bannerContentInnerWrapper">
             <router-link to="/personal-training">
               <a @click="setOpenMediaQuery(open)">
                 <button>START HERE</button>
               </a>
             </router-link>
             <button>GET IN TOUCH</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>

@@ -1,9 +1,7 @@
 <template>
   <section id="home">
-    <h1 class="title">Your Fitness Journey</h1>
-    <h1 class="title">Starts here</h1>
-    <h1 class="title">lose fat-get in shape-feel awesome</h1>
-    <h1 class="title">OurMISSION IS SIMPLE</h1>
+    
+    <h1 class="title">Our MISSION IS SIMPLE</h1>
     <p>Throughout the years Fisical Fitness has designed bespoke exercise and nutrition programs for clients from all walks of life.  Our trainers specialise in helping clients with fat loss, muscle toning, and increasing strength without bulking up. We can show you how to integrate fitness into your daily lifestyle without much effort or cost.</p>
     <p>Fisical Fitness’s Exercise and Nutrition programmes</p>
     <ul>

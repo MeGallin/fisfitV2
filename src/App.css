@@ -41,8 +41,7 @@ dd {
 
 /* Set core body defaults */
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Signika', sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -118,6 +117,13 @@ section {
   margin: 0 auto; 
   width: 80%;
   padding-bottom: 1em;
+}
+ul h3 {
+  text-align: left;
+  color:crimson; 
+  font-size: 48px;
+   
+  padding-bottom: 10px;
 }
 
 /* Media Queries */
