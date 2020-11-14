@@ -1,5 +1,5 @@
 <template>    
-  <div class="form-container">
+  <div>
       <div class="item">          
         <div class="form-style">               
           <form @submit.prevent="handleContactFormSubmit">
