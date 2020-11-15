@@ -18,13 +18,13 @@ const routes = [
   { path: '/personal-training', component: PersonalTraining },
   { path: '/online-coaching', component: OnlineCoaching },
   { path: '/calorie-calculator', component: CalorieCalculator },
-  { path: '*', component: PathNotFound },
+  { path: '/:pathMatch(.*)*', redirect: PathNotFound, component: PathNotFound },
 ];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
+  routes: [...routes],
 });
 
 export default router;
