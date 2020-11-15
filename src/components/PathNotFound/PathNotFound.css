@@ -1,0 +1,11 @@
+section { 
+    display: grid;
+    place-items: center;
+}
+.logo {
+    /* Logo size = 816 high x 747 Wide ratio = 1.092369 */
+    height: 100px;
+    width: 92px;
+    display: flex;
+    margin: 0.2em;
+  }

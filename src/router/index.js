@@ -5,6 +5,7 @@ import About from '../components/About/About.vue';
 import PersonalTraining from '../components/Personal-Training/PersonalTraining.vue';
 import OnlineCoaching from '../components/Online-Coaching/OnlineCoaching.vue';
 import CalorieCalculator from '../components/CalorieCalculator/CalorieCalculator.vue';
+import PathNotFound from '../components/PathNotFound/PathNotFound.vue';
 
 Vue.config.productionTip = false;
 // Need this for vue routing
@@ -17,6 +18,7 @@ const routes = [
   { path: '/personal-training', component: PersonalTraining },
   { path: '/online-coaching', component: OnlineCoaching },
   { path: '/calorie-calculator', component: CalorieCalculator },
+  { path: '*', component: PathNotFound },
 ];
 
 const router = new VueRouter({
