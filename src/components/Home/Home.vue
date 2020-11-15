@@ -4,30 +4,49 @@
     <h1 class="title">Our MISSION IS SIMPLE</h1>
     <p>Throughout the years Fisical Fitness has designed bespoke exercise and nutrition programs for clients from all walks of life.  Our trainers specialise in helping clients with fat loss, muscle toning, and increasing strength without bulking up. We can show you how to integrate fitness into your daily lifestyle without much effort or cost.</p>
     <p>Fisical Fitness’s Exercise and Nutrition programmes</p>
-    <ul>
-      <li>
-        <p>controls weight</p>
-      </li>
-      <li>
-        <p>boosts energy</p>
-      </li>
-      <li>
-        <p>combat health conditions and diseases</p>
-      </li>
-      <li>
-        <p>improves your mood</p>
-      </li>
-      <li>
-        <p>promotes better sleep</p>
-      </li>
-    </ul>
+
+    <div class="floatLeft">
+        <div class="textWrapper">
+          <div class="logo"><img v-bind:src="`../../assets/images/${logo.colour}`" /></div>
+          <p>controls weight</p>
+        </div>
+    </div>
+    <div class="floatLeft">
+        <div class="textWrapper">
+          <div class="logo"><img v-bind:src="`../../assets/images/${logo.colour}`" /></div>
+           <p>boosts energy</p>
+        </div>
+    </div >
+    <div class="floatLeft">
+      <div class="textWrapper">
+        <div class="logo"><img v-bind:src="`../../assets/images/${logo.colour}`" /></div>       
+          <p>combat health conditions and diseases</p>
+      </div>
+    </div>
+    <div class="floatLeft">
+      <div class="textWrapper">
+          <div class="logo"><img v-bind:src="`../../assets/images/${logo.colour}`" /></div>
+          <p>improves your mood</p>          
+      </div>
+    </div>
+    <div class="floatLeft">
+        <div class="textWrapper">
+          <div class="logo"><img v-bind:src="`../../assets/images/${logo.colour}`" /></div>
+          <p>promotes better sleep</p>
+        </div>
+    </div>
   
   </section>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  data() {
+        return {
+                  name: "Home",
+                  logo: {"white":"logo-white.png","colour":"logo-colour.png"},
+        }
+  }
 };
 </script>
 

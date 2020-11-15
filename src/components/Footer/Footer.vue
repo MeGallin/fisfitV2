@@ -5,13 +5,13 @@
         
     <div class="item footerContent">
 
-      <div>
+      <!-- <div>
         <div class="logo">
           <router-link to="/">
             <img v-bind:src="`../../assets/images/${logo.colour}`" />
           </router-link>
         </div>
-      </div>
+      </div> -->
 
       <div class="item footer-center-content">
         <div class="inner-wrapper">                  
