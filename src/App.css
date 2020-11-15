@@ -120,7 +120,7 @@ section {
 }
 ul h3 {
   text-align: left;
-  color:crimson; 
+  /* color: rgba(0,141,210,1);  */
   font-size: 48px;
    
   padding-bottom: 10px;
