@@ -4,7 +4,7 @@
       <div class="navWrapper">
         <div class="logo">
           <router-link to="/">
-            <img v-bind:src="`../../assets/images/${logo}`" />
+            <img v-bind:src="`../../assets/images/${logo.colour}`" />
           </router-link>
         </div>
         <div class="hamburger" @click="setOpen(!open)">
@@ -127,7 +127,7 @@ export default {
     return {
       name: "Header",
       open: false,
-      logo: "logo-white.png",
+      logo: {"white":"logo-white.png","colour":"logo-colour.png"},
       homeBannerContent: true,
       aboutBannerContent: false,
       personalTrainingBannerContent: false,
