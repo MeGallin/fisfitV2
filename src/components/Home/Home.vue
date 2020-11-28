@@ -35,17 +35,19 @@
           <p>promotes better sleep</p>
         </div>
     </div>
+  <div>
   
+  </div>
   </section>
 </template>
-
 <script>
+
 export default {
   data() {
         return {
                   name: "Home",
                   logo: {"white":"logo-white.png","colour":"logo-colour.png"},
-        }
+        };
   }
 };
 </script>

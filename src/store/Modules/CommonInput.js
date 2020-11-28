@@ -7,6 +7,7 @@ const state = {
   age: null,
   activity: null,
   isSubmitted: false,
+  hideCookiesWarning: 'no',
 };
 const getters = {
   answer: (state) => state.answer,
@@ -17,6 +18,7 @@ const getters = {
   age: (state) => state.age,
   activity: (state) => state.activity,
   isSubmitted: (state) => state.isSubmitted,
+  hideCookiesWarning: (state) => state.hideCookiesWarning,
 };
 
 //NB Vuex Crash course youtube 21 minutes
@@ -38,6 +40,12 @@ const actions = {
     }
     commit('handleCommit', payload);
   },
+  handleCookiesWarning({ commit }, payload) {   
+    if(payload === 'yes') {
+      state.hideCookiesWarning = payload;
+    }   
+    commit('handleCookiesWarning', payload);
+  }
 };
 
 const mutations = {
@@ -53,6 +61,9 @@ const mutations = {
     console.log(state);
     return state.isSubmitted;
   },
+  handleCookiesWarning: function(state) {
+    return state.hideCookiesWarning;
+  }
 };
 
 export default {
