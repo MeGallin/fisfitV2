@@ -5,13 +5,32 @@
         
     <div class="item footerContent">
 
-      <!-- <div>
+      <div>
         <div class="logo">
           <router-link to="/">
             <img v-bind:src="`../../assets/images/${logo.colour}`" />
           </router-link>
         </div>
-      </div> -->
+      </div>     
+
+      <div>
+        <address>
+          <span>
+            <span>Address:</span>
+            <br>
+            <span>Beneficial House</span>
+            <br>
+            <span>Easthampstead Rd</span>,  
+            <abbr title="Bracknell, Berkshire">Bracknell</abbr>&nbsp;&nbsp;
+            <br>
+            <span>RG12 1NS</span>            
+          </span>
+          <br>
+          <span>
+            Email <a href="mailto:zach@fisicalfitness.co.uk">Zack</a>
+          </span>          
+        </address>
+      </div>
 
       <div class="item footer-center-content">
         <div class="inner-wrapper">                  

@@ -52,9 +52,13 @@ nav {
 }
 
 /* Banner Content styling */
+.headerText {
+  border-bottom: yellow 4px solid;
+  margin-bottom: 0.4em;
+}
 .spacer {
   height: 4px;
-  width: 4%;
+  width: 20vw;
 }
 .home {
   background-color: yellow;

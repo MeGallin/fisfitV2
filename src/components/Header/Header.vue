@@ -44,8 +44,8 @@
 
       <div class="bannerContentContainer">
         <div v-if="homeBannerContent" class="bannerContentWrapper">
-          <h2>YOUR FITNESS JOURNEY</h2>
-          <div class="spacer home"></div>
+          <h2 class="headerText">YOUR FITNESS JOURNEY</h2>
+          <!-- <div class="spacer home"></div> -->
           <h5>STARTS HERE</h5>
           <h1 class="title">LOSE FAT – GET IN SHAPE – FEELING AWESOME</h1>
           <!-- <div class="bannerContentInnerWrapper">

@@ -7,13 +7,13 @@ if(isset($postdata) && !empty($postdata)) {
      $email = $request['email'];
     //  $message = $request['message'];
 
-     $to = 'zach@fisicalfitness.co.uk';
-     $to = 'me@garyallin.uk';
+     $toZach = 'zach@fisicalfitness.co.uk';
+     $toMe = 'me@garyallin.uk';
      $subject = 'Contact Request';     
      $headers = 'From:'.$name;
      $headers .= 'Reply-To:'.$email;
 
-    mail($to, $subject, $message, $headers);
+    mail($toZach, $toMe, $subject, $message, $headers);
 
 //     //Example with StdClass
 // $json = '{"name":"Gary Allin","email":"gary.allin@gmail.com","message":"hhyhhy"}';
