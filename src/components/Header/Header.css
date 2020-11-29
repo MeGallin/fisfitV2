@@ -2,9 +2,10 @@
 header {
   width: 100%;
 }
+
 .navImageWrapper {
   background-color: black;
-  background-image: url('../../assets/images/banner.jpg');
+  background-image: url('../../../public/assets/images/banner.jpg');
   background-position: bottom; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;

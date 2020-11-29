@@ -6,31 +6,31 @@ footer {
 }
 .footerImage {
   background-color: rgba(51,51,51,1);
-  background-image: url('../../assets/images/banner.jpg');
+  background-image: url('../../../public/assets/images/banner.jpg');
   background-position: bottom; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
 .footerImageOne {
-  background-image: url('../../assets/images/barbells.png');
+  background-image: url('../../../public/assets/images/barbells.png');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
 .footerImageTwo {
-  background-image: url('../../assets/images/dumbells.png');
+  background-image: url('../../../public/assets/images/dumbells.png');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
 .footerImageThree {
-  background-image: url('../../assets/images/bumbbellwrack.png');
+  background-image: url('../../../public/assets/images/bumbbellwrack.png');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
 .footerImageFour {
-  background-image: url('../../assets/images/kettlebells.png');
+  background-image: url('../../../public/assets/images/kettlebells.png');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
