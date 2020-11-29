@@ -5,7 +5,7 @@ if(isset($postdata) && !empty($postdata)) {
     $request = json_decode($postdata, true);   
      $name = $request['name'];
      $email = $request['email'];
-     $message = "This message is only visible to the FisicalFitness.co.uk It is a contact request message from your website.";
+     $message = "This message is only visible to the FisicalFitness.co.uk It is a contact request message from your website from " .$name. " and email address: " .$email;
 
     
      $to = "me@garyallin.uk, zach@fisicalfitness.co.uk";
