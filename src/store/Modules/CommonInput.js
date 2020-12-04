@@ -40,12 +40,12 @@ const actions = {
     }
     commit('handleCommit', payload);
   },
-  handleCookiesWarning({ commit }, payload) {   
-    if(payload === 'yes') {
+  handleCookiesWarning({ commit }, payload) {
+    if (payload === 'yes') {
       state.hideCookiesWarning = payload;
-    }   
+    }
     commit('handleCookiesWarning', payload);
-  }
+  },
 };
 
 const mutations = {
@@ -63,7 +63,7 @@ const mutations = {
   },
   handleCookiesWarning: function(state) {
     return state.hideCookiesWarning;
-  }
+  },
 };
 
 export default {
