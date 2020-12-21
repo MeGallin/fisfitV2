@@ -6,8 +6,8 @@ const state = {
   sex: null,
   age: null,
   activity: null,
-  isSubmitted: true,
-  hideCookiesWarning: 'yes',
+  isSubmitted: false,
+  hideCookiesWarning: 'no',
 };
 const getters = {
   answer: (state) => state.answer,
