@@ -58,7 +58,7 @@
   </p>      
 </div>
     
-  <div class="metric-wrapper">  
+    
     <div v-show="isImperial" class="item">
       <div  class="form-style-bmr">
         <label>Weight (lb) 
@@ -82,7 +82,7 @@
         </label>
         <input :class="age > 0 ? 'entered': ''" type="number" v-model="ageInYears" :placeholder="age"/>        
       </div>
-      <button class="switch-button" @click="handleResetImperial(null)">RESET</button>
+      
     </div>
   
     <!-- Metric code --> 
@@ -103,7 +103,7 @@
       </label>
       <input :class="age > 0 ? 'entered': ''" type="number" v-model="ageInYears" :placeholder="age" />      
     </div> 
-    <button class="switch-button" @click="handleResetMetric(null)">RESET</button>     
+    
   </div>
   
 <div>
@@ -136,7 +136,7 @@
       </label>    
     </div>
   </div>
-
+     <p class="notice">Please note: If you changed any of the values you need to re-select an activity to get the UPDATED BTM value</p>
   <div class="label-wrapper">    
       <label class="label" for="activity">
       <input
@@ -193,10 +193,12 @@
         />Extra Active
         </label>    
     </div>
-     <p class="notice">Please note: If you changed any of the values you need to re-select an activity to get the UPDATED BTM value</p>         
+ 
+             
   </div>  
 
-</div>   
+       <button v-show="isMetric" class="switch-button" @click="handleResetMetric(null)">RESET</button> 
+       <button v-show="isImperial" class="switch-button" @click="handleResetImperial(null)">RESET</button>
 
 </section>
 </template>
