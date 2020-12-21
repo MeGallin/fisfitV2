@@ -4,8 +4,7 @@ const state = {
   heightMeters: null,
   metres: null,
   weightKgs: null,
-  sexMetric: null,
-  ageMetric: null,
+  sex: null,
   activityMetric: null,
 };
 const getters = {
@@ -14,8 +13,6 @@ const getters = {
   heightMeters: (state) => state.heightMeters,
   metres: (state) => state.metres,
   weightKgs: (state) => state.weightKgs,
-  sexMetric: (state) => state.sexMetric,
-  ageMetric: (state) => state.ageMetric,
   activityMetric: (state) => state.activityMetric,
 };
 
@@ -30,29 +27,17 @@ const actions = {
     commit('handleWeightKg', val);
   },
 
-  handleAge({ commit }, age) {
-    if (age !== undefined) {
-      state.ageMetric = age;
+  handleAge(context, age) {
+    if (context.rootState.CommonInput.age !== undefined) { 
       state.age = age;
     }
-    commit('handleAge', age);
+    context.commit('handleAge', age);
   },
 
-  handleSex({ commit }, val) {
-    state.sexMetric = val;
-    state.sex = val;
-    if (state.sex === 'male') {
-      return state.metricAnswer;
-    }
-    if (state.sex === 'female') {
-      return state.metricAnswer;
-    }
-    commit('handleSex', val);
-  },
-  handleActivity({ commit }, val) {
+  handleActivity(context, val) {  
     state.activityMetric = val;
     state.activity = val;
-    if (state.sex === 'male') {
+    if (context.rootState.CommonInput.sex === 'male') {
       const stepOne = 13.7 * state.weightKgs;
       const stepTwo = 5 * state.heightMeters;
       const stepThree = 4.7 * state.age;
@@ -61,7 +46,7 @@ const actions = {
         state.activity
       ).toFixed(2);
     }
-    if (state.sex === 'female') {
+    if (context.rootState.CommonInput.sex === 'female') {
       const stepOne = 9.6 * state.weightKgs;
       const stepTwo = 1.8 * (state.heightMeters / 100);
       const stepThree = 4.7 * state.age;
@@ -70,18 +55,16 @@ const actions = {
         state.activity
       ).toFixed(2);
     }
-    commit('handleActivity', val);
+    context.commit('handleActivity', val);
   },
-  handleResetMetric({ commit }, val) {
+  handleResetMetric(context, val) {
+    console.log('STATE.AGR', val);
     state.metricAnswer = val;
     state.weightKgs = val;
     state.heightMeters = val;
-    state.ageImperial = val;
-    state.ageMetric = val;
-    state.sexMetric = val;
     state.activityMetric = val;
-    state.age = val;
-    commit('handleResetMetric', val);
+    context.rootState.CommonInput.age = val;
+    context.commit('handleResetMetric', val);
   },
 };
 
@@ -97,21 +80,15 @@ const mutations = {
     return state.age;
   },
 
-  handleSex: function(state) {
-    return state.sex;
-  },
   handleActivity: function(state) {
     return state.activity;
   },
   handleResetMetric: function(state) {
-    console.log(state);
     return [
       state.metricAnswer,
       state.weightKgs,
       state.heightMeters,
-      state.ageMetric,
-      state.ageImperial,
-      state.sexMetric,
+      state.sex,
       state.activityMetric,
       state.age,
     ];

@@ -8,8 +8,6 @@ const state = {
   feet: null,
   inches: null,
   convertedInchesToMetric: null,
-  ageImperial: null,
-  sexImperial: null,
 };
 const getters = {
   imperialAnswer: (state) => state.imperialAnswer,
@@ -20,8 +18,6 @@ const getters = {
   numberInInches: (state) => state.numberInInches,
   feet: (state) => state.feet,
   inches: (state) => state.inches,
-  ageImperial: (state) => state.ageImperial,
-  sexImperial: (state) => state.sexImperial,
 };
 
 //NB Vuex Crash course youtube 21 minutes
@@ -44,31 +40,18 @@ const actions = {
       commit('handleConvertInchesToMetric', inches);
     }
   },
-  handleAge({ commit }, age) {
-    if (age !== undefined) {
-      state.ageImperial = age;
+  handleAge(context, age) {
+    if (context.rootState.CommonInput.age !== undefined) {
       state.age = age;
     }
-    commit('handleAge', age);
+    context.commit('handleAge', age);
   },
 
-  handleSex({ commit }, val) {
-    state.sexImperial = val;
-    state.sex = val;
-    if (state.activity !== undefined) {
-      if (state.sex === 'male') {
-        return state.imperialAnswer;
-      }
-      if (state.sex === 'female') {
-        return state.imperialAnswer;
-      }
-    }
-    commit('handleSex', val);
-  },
+ 
 
-  handleActivity({ commit }, val) {
+  handleActivity(context, val) {
     state.activity = val;
-    if (state.sex === 'male') {
+    if (context.rootState.CommonInput.sex === 'male') {
       const stepOne = 13.7 * state.convertedWeightInKgs;
       const stepTwo =
         5 *
@@ -81,7 +64,7 @@ const actions = {
       ).toFixed(2);
     }
 
-    if (state.sex === 'female') {
+    if (context.rootState.CommonInput.sex === 'female') {
       const stepOne = 9.6 * state.convertedWeightInKgs;
       const stepTwo =
         1.8 * (state.convertedHeightInMeters + state.convertedInchesToMetric);
@@ -91,18 +74,16 @@ const actions = {
         state.activity
       ).toFixed(2);
     }
-    commit('handleActivity', val);
+    context.commit('handleActivity', val);
   },
-  handleResetImperial({ commit }, val) {
+  handleResetImperial(context, val) {
     state.imperialAnswer = val;
     state.weightInPounds = val;
     state.feet = val;
     state.inches = val;
-    state.ageImperial = val;
-    state.sexImperial = val;
-    state.activityMetric = val;
-    state.age = val;
-    commit('handleResetImperial', val);
+     state.activityMetric = val;
+     context.rootState.CommonInput.age = val;
+    context.commit('handleResetImperial', val);
   },
 };
 
@@ -123,21 +104,17 @@ const mutations = {
     return state.age;
   },
 
-  handleSex: function(state) {
-    return state.sex;
-  },
+ 
   handleActivity: function(state) {
     return state.activity;
   },
   handleResetImperial: function(state) {
-    console.log(state);
     return [
       state.imperialAnswer,
       state.weightInPounds,
       state.feet,
-      state.inches,
-      state.ageImperial,
-      state.sexImperial,
+      state.inches,   
+      state.sex,
       state.activityMetric,
       state.age,
     ];

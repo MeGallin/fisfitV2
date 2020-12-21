@@ -40,24 +40,20 @@ const actions = {
     }
     commit('handleCommit', payload);
   },
+  handleSex({ commit }, payload) {
+    state.sex = payload;
+    commit('handleSex', payload)
+  },
+  handleAge({ commit }, payload) {
+    state.age = payload;
+    commit('handleAge', payload)
+  },
   handleCookiesWarning({ commit }, payload) {
     if (payload === 'yes') {
       state.hideCookiesWarning = payload;
     }
     commit('handleCookiesWarning', payload);
-  },
-  handleResetImperial({ commit }, val) {
-    state.imperialAnswer = val;
-    state.weightInPounds = val;
-    state.feet = val;
-    state.inches = val;
-    state.ageImperial = val;
-    state.sexImperial = val;
-    state.activityMetric = val;
-    state.activity = val;
-    state.age = val;
-    commit('handleResetImperial', val);
-  },
+  }
 };
 
 const mutations = {
@@ -70,26 +66,19 @@ const mutations = {
     }
   },
   handleCommit: function(state) {
-    console.log(state);
+   
     return state.isSubmitted;
+  },
+  handleSex: function(state) {
+    return state.sex;
+  },
+  handleAge: function(state) {
+    return state.age;
   },
   handleCookiesWarning: function(state) {
     return state.hideCookiesWarning;
   },
-  handleResetImperial: function(state) {
-    console.log(state);
-    return [
-      state.imperialAnswer,
-      state.weightInPounds,
-      state.feet,
-      state.inches,
-      state.ageImperial,
-      state.sexImperial,
-      state.activityMetric,
-      state.activity,
-      state.age,
-    ];
-  },
+
 };
 
 export default {
