@@ -41,6 +41,7 @@ const actions = {
     commit('handleCommit', payload);
   },
   handleSex({ commit }, payload) {
+    console.log('COMMON', payload)
     state.sex = payload;
     commit('handleSex', payload)
   },

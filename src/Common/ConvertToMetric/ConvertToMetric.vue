@@ -116,8 +116,8 @@
          class="option-input radio"
           type="radio"
           name="sex"
-          value="male"
-          :checked="sex === true ? true : false"
+          value= null
+          :checked="sex === true ? true : null"
           @change="handleSex('male')"
 
         />Male
@@ -128,8 +128,8 @@
        class="option-input radio"
         type="radio"
         name="sex"
-        value="female"
-        :checked="sex === true ? true : false"
+        value= null
+        :checked="sex === true ? true : null"
         @change="handleSex('female')"
 
       />Female
@@ -192,7 +192,8 @@
           @change="handleActivity(1.9)"
         />Extra Active
         </label>    
-    </div>         
+    </div>
+     <p class="notice">Please note: If you changed any of the values you need to re-select an activity to get the UPDATED BTM value</p>         
   </div>  
 
 </div>   

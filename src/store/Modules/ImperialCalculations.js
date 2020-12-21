@@ -81,8 +81,9 @@ const actions = {
     state.weightInPounds = val;
     state.feet = val;
     state.inches = val;
-     state.activityMetric = val;
-     context.rootState.CommonInput.age = val;
+    state.activityMetric = val;
+    context.rootState.CommonInput.sex = val;
+    context.rootState.CommonInput.age = val;
     context.commit('handleResetImperial', val);
   },
 };

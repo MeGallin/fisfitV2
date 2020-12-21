@@ -58,11 +58,11 @@ const actions = {
     context.commit('handleActivity', val);
   },
   handleResetMetric(context, val) {
-    console.log('STATE.AGR', val);
     state.metricAnswer = val;
     state.weightKgs = val;
     state.heightMeters = val;
     state.activityMetric = val;
+    context.rootState.CommonInput.sex = val;
     context.rootState.CommonInput.age = val;
     context.commit('handleResetMetric', val);
   },
