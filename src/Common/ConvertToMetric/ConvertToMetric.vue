@@ -24,7 +24,7 @@
     </button>
 
 
-<div v-if="isMetric && metricAnswer !== null">
+<div v-if="isMetric && metricAnswer !== null && ageMetric !== null && sexImperial !== null && weightKgs !== null && heightMeters !== null">
       <h3>Metric</h3>
   <p> For a 
     <span class="answer">{{ageMetric}}</span> year old 
@@ -40,7 +40,7 @@
   </p>      
 </div>
 
-<div v-if="isImperial && imperialAnswer !== null">
+<div v-if="isImperial && imperialAnswer !== null && ageImperial !== null && sexImperial !== null && weightInPounds !== null && feet !== null && inches !== null">
       <h3>Imperial</h3>
   <p>For a 
       <span class="answer">{{ageImperial}}</span> year old 

@@ -6,8 +6,8 @@ const state = {
   sex: null,
   age: null,
   activity: null,
-  isSubmitted: false,
-  hideCookiesWarning: 'no',
+  isSubmitted: true,
+  hideCookiesWarning: 'yes',
 };
 const getters = {
   answer: (state) => state.answer,
@@ -46,6 +46,18 @@ const actions = {
     }
     commit('handleCookiesWarning', payload);
   },
+  handleResetImperial({ commit }, val) {
+    state.imperialAnswer = val;
+    state.weightInPounds = val;
+    state.feet = val;
+    state.inches = val;
+    state.ageImperial = val;
+    state.sexImperial = val;
+    state.activityMetric = val;
+    state.activity = val;
+    state.age = val;
+    commit('handleResetImperial', val);
+  },
 };
 
 const mutations = {
@@ -63,6 +75,20 @@ const mutations = {
   },
   handleCookiesWarning: function(state) {
     return state.hideCookiesWarning;
+  },
+  handleResetImperial: function(state) {
+    console.log(state);
+    return [
+      state.imperialAnswer,
+      state.weightInPounds,
+      state.feet,
+      state.inches,
+      state.ageImperial,
+      state.sexImperial,
+      state.activityMetric,
+      state.activity,
+      state.age,
+    ];
   },
 };
 
